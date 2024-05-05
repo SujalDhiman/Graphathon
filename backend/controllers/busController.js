@@ -142,6 +142,7 @@ export const updateBusDetails = async function (req, res) {
   const bus = await BUS.findById(id);
 
   console.log(bus);
+  console.log(req.body)
 
   if (!bus) {
     res.status(400).send("No bus found with such details");
@@ -185,7 +186,7 @@ export const activeBusDetails = async function (req, res) {
 };
 
 export const busRoutes = async function (req, res) {
-  const allRoutes = await SCHEMA.find().populate("stations");
+  const allRoutes = await ROUTE.find().populate("stations");
 
   res.status(200).json({
     success: true,
