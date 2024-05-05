@@ -3,8 +3,8 @@ import { DB_NAME } from "../constants.js";
 
 const connectToDB=async function (){
     try {
-        console.log(`${process.env.MONGODB_URL}/${DB_NAME}`)
-        const connectionInstance=await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)
+        
+        const connectionInstance=await mongoose.connect(`${process.env.MONGODB_URL}`)
         console.log("Database connected successfully")
         console.log("hello")
     } catch (error) {
